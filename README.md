@@ -17,10 +17,10 @@
  
  
   Benefits - 
-  1. No separate builds for application
-  2. Application can decide what language to show based on user locale (dictionary has to be loaded for that)
+  1. No separate builds for application.
+  2. Application can decide what language to show based on user locale (dictionary has to be loaded for that).
  
-  dictionary can be loaded from backend server based on user locale.
+  Dictionary can be loaded from backend server based on user locale.
  
   Usage - classic application (same way for modern application)
   Ext.create('Ext.panel.Panel', {
@@ -28,7 +28,8 @@
 			ptype: 'localization',
 			dictionary : {
 				'Add Items' : 'आइटम जोड़ें',
-				'Remove Items' : 'आइटम हटाएँ'
+				'Remove Items' : 'आइटम हटाएँ',
+				'Exit': 'Sortie'
 			}
 		}],
 		items : [{
@@ -43,6 +44,14 @@
 			xtype : 'button',
 			text : 'Remove Items',
 			handler : 'someRemoveHandlerInController',
+			scope : 'controller',
+			autoEl : {
+				extlocalize :"localize"
+			}
+		},{
+			xtype : 'button',
+			text : 'Exit',
+			handler : 'someExitHandlerInController',
 			scope : 'controller',
 			autoEl : {
 				extlocalize :"localize"
